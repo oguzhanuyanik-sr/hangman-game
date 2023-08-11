@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import styles from './styles/App.module.css';
 import words from './api/wordList.json';
 import HangmanDrawing from './components/HangmanDrawing';
@@ -19,7 +19,7 @@ const getResult = (isWinner: boolean, isLoser: boolean) => {
 };
 
 const App: React.FC = () => {
-  const [wordToGuess, setWordToGuess] = useState<string>(getWord);
+  const [wordToGuess, _setWordToGuess] = useState<string>(getWord);
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
 
   const incorrectLetters = guessedLetters.filter(
